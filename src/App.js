@@ -32,22 +32,26 @@ class App extends React.Component {
       country: data.sys.country,
       humidity: data.main.humidity,
       description: data.weather[0].description,
-      error
+      error: ""
     });
-
-
   }
 
   render() {
     return ( 
-    < div >
+    <div>
       < Titles / >
-      < Form getWeather = {
-        this.getWeather
-      } /> < Weather / >
+      < Form getWeather = {this.getWeather}/>
+      < Weather 
+      temperature = {this.state.temperature}
+      city = {this.state.city}
+      country = {this.state.country}
+      humidity = {this.state.humidity}
+      description = {this.state.description}
+      error = {this.state.error}
+      />
       </div>
     );
   }
-}
+};
 
 export default App;
